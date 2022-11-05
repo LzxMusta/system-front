@@ -1,4 +1,10 @@
 import Vue from 'vue'
+//新增
+import hasBtnPermission from '@/utils/btn-permission'
+Vue.prototype.$hasBP = hasBtnPermission
+
+
+
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 

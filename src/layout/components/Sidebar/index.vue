@@ -31,7 +31,10 @@ export default {
       'sidebar'
     ]),
     routes() {
-      return this.$router.options.routes
+      //lzxmusta
+      // return this.$router.options.routes
+
+       return this.$router.options.routes.concat(global.antRouter)//新增
     },
     activeMenu() {
       const route = this.$route
