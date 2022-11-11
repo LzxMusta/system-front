@@ -59,7 +59,7 @@
 
       <div class="tips">
         <span style="margin-right: 20px">username: admin</span>
-        <span> password: any</span>
+        <span> password: 111111</span>
       </div>
     </el-form>
   </div>
@@ -72,13 +72,13 @@ export default {
   name: "Login",
   data() {
     const validateUsername = (rule, value, callback) => {
-      //lzxmusta
+      // lzxmusta
       // if (!validUsername(value)) {
       //   callback(new Error('Please enter the correct user name'))
       // } else {
       //   callback()
       // }
-      //用户名只检查长度
+     // 用户名只检查长度
       if (value.length < 5) {
         callback(new Error("Please enter the correct user name"));
       } else {
@@ -135,7 +135,11 @@ export default {
           this.loading = true;
           this.$store
             .dispatch("user/login", this.loginForm)
-            .then(() => {
+            // .then(() => {
+            //   this.$router.push({ path: this.redirect || "/" });
+            //   this.loading = false;
+            // })
+              .then(() => {
               this.$router.push({ path: this.redirect || "/" });
               this.loading = false;
             })

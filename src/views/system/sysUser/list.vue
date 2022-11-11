@@ -31,6 +31,7 @@
             type="primary"
             icon="el-icon-search"
             size="mini"
+             :disabled="$hasBP('bnt.sysUser.list')  === false" 
             @click="fetchData()"
             >搜索</el-button
           >
@@ -43,7 +44,7 @@
 
     <!-- 工具条 -->
     <div class="tools-div">
-      <el-button type="success" icon="el-icon-plus" size="mini" @click="add" :disabled="$hasBP('bnt.sysRole.add')  === false"
+      <el-button type="success" icon="el-icon-plus" size="mini" @click="add" :disabled="$hasBP('bnt.sysUser.add')  === false"
         >添 加</el-button
       >
     </div>
@@ -67,7 +68,7 @@
       <el-table-column prop="phone" label="手机" />
       <el-table-column label="状态" width="80">
         <template slot-scope="scope">
-          <el-switch
+          <el-switch  :disabled="$hasBP('bnt.sysUser.update')  === false"
             v-model="scope.row.status === 1"
             @change="switchStatus(scope.row)"
           >
@@ -81,14 +82,14 @@
           <el-button
             type="primary"
             icon="el-icon-edit"
-            size="mini" :disabled="$hasBP('bnt.sysRole.add')  === false"
+            size="mini" :disabled="$hasBP('bnt.sysUser.update')  === false"
             @click="edit(scope.row.id)"
             title="修改"
           />
           <el-button
             type="danger"
             icon="el-icon-delete"
-            size="mini" :disabled="$hasBP('bnt.sysRole.add')  === false"
+            size="mini" :disabled="$hasBP('bnt.sysUser.remove')  === false"
             @click="removeDataById(scope.row.id)"
             title="删除"
           />
@@ -96,7 +97,7 @@
           <el-button
             type="warning"
             icon="el-icon-baseball"
-            size="mini" :disabled="$hasBP('bnt.sysRole.add')  === false"
+            size="mini" :disabled="$hasBP('bnt.sysUser.assignRole')  === false"
             @click="showAssignRole(scope.row)"
             title="分配角色"
           />

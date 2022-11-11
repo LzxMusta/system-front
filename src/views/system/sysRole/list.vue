@@ -19,6 +19,7 @@
             type="primary"
             icon="el-icon-search"
             size="mini"
+              :disabled="$hasBP('bnt.sysRole.list')  === false" 
             @click="fetchData()"
             >搜索</el-button
           >
@@ -34,7 +35,7 @@
       <el-button type="success" icon="el-icon-plus" size="mini" @click="add" :disabled="$hasBP('bnt.sysRole.add')  === false"
         >添 加</el-button
       >
-      <el-button class="btn-add" size="mini" @click="batchRemove()" :disabled="$hasBP('bnt.sysRole.add')  === false"
+      <el-button class="btn-add" size="mini" @click="batchRemove()" :disabled="$hasBP('bnt.sysRole.remove')  === false"
         >批量删除</el-button
       >
     </div>
@@ -62,21 +63,22 @@
           <el-button
             type="primary"
             icon="el-icon-edit"
-            size="mini" :disabled="$hasBP('bnt.sysRole.add')  === false"
+            size="mini" :disabled="$hasBP('bnt.sysRole.update')  === false"
             @click="edit(scope.row.id)"
             title="修改"
           />
           <el-button
             type="danger"
             icon="el-icon-delete"
-            size="mini" :disabled="$hasBP('bnt.sysRole.add')  === false"
+           size="mini" :disabled="$hasBP('bnt.sysRole.remove')  === false"
             @click="removeDataById(scope.row.id)"
             title="删除"
           />
+           
           <el-button
             type="warning"
             icon="el-icon-baseball"
-            size="mini" :disabled="$hasBP('bnt.sysRole.add')  === false"
+            size="mini" :disabled="$hasBP('bnt.sysRole.assignAuth')  === false"
             @click="showAssignAuth(scope.row)"
             title="分配权限"
           />

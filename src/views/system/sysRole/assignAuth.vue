@@ -13,7 +13,7 @@
       :props="defaultProps"
     />
     <div style="padding: 20px 20px;">
-      <el-button :loading="loading" type="primary" icon="el-icon-check" size="mini" @click="save">保存</el-button>
+      <el-button  :disabled="$hasBP('bnt.sysRole.assignAuth')  === false"  :loading="loading" type="primary" icon="el-icon-check" size="mini" @click="save">保存</el-button>
       <el-button @click="$router.push('/system/sysRole')" size="mini" icon="el-icon-refresh-right">返回</el-button>
     </div>
   </div>
@@ -71,7 +71,7 @@
       保存权限列表
       */
       save() {
-        debugger
+        // debugger
         //获取到当前子节点
         //const checkedNodes = this.$refs.tree.getCheckedNodes()
         //获取到当前子节点及父节点

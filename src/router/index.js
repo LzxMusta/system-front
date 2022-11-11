@@ -37,11 +37,7 @@ export const constantRoutes = [
     hidden: true
   },
 
-  // {
-  //   path: '/404',
-  //   component: () => import('@/views/404'),
-  //   hidden: true
-  // },
+
 
   {
     path: '/',
@@ -57,55 +53,25 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    name: 'sysLoginLog',
+    path: 'sysLoginLog',
+    component: () => import('@/views/system/sysLoginLog/list'),
+    meta: {
+      title: '登录日志',
+      icon: 'el-icon-s-unfold'
+    },
+  },
+  {
+    name: 'sysOperLog',
+    path: 'sysOperLog',
+    component: () => import('@/views/system/sysOperLog/list'),
+    meta: {
+      title: '操作日志',
+      icon: 'el-icon-s-unfold'
+    },
+  }
 
-  // {
-  //   path: '/system',
-  //   component: Layout,
-  //   meta: {
-  //     title: '系统管理',
-  //     icon: 'el-icon-s-tools'
-  //   },
-  //   alwaysShow: true,
-  //   children: [
-  //     {
-  //       name: 'sysUser',
-  //       path: 'sysUser',
-  //       component: () => import('@/views/system/sysUser/list'),
-  //       meta: {
-  //         title: '用户管理',
-  //         icon: 'el-icon-s-custom'
-  //       },
-  //     },
-  //     {
-  //       path: 'sysRole',
-  //       component: () => import('@/views/system/sysRole/list'),
-  //       meta: {
-  //         title: '角色管理',
-  //         icon: 'el-icon-user-solid'
-  //       },
-  //     },
-  //     {
-  //       name: 'sysMenu',
-  //       path: 'sysMenu',
-  //       component: () => import('@/views/system/sysMenu/list'),
-  //       meta: {
-  //         title: '菜单管理',
-  //         icon: 'el-icon-s-unfold'
-  //       },
-  //     },
-  //     {
-  //       path: 'assignAuth',
-  //       component: () => import('@/views/system/sysRole/assignAuth'),
-  //       meta: {
-  //         activeMenu: '/system/sysRole',
-  //         title: '角色授权'
-  //       },
-  //       hidden: true,
-  //     }
-  //   ]
-  // },
-  // // 404 page must be placed at the end !!!
-  // { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
